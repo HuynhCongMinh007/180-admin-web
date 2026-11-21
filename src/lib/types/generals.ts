@@ -27,7 +27,13 @@ export interface PaginationMeta {
   prevPage: number | null
 }
 
+export interface OffsetPaginationMeta {
+  offset: number
+  limit: number
+  total: number
+}
+
 export interface ApiResponse<T = any> extends ApiBase {
   data: T
-  metadata?: PaginationMeta
+  metadata?: PaginationMeta | OffsetPaginationMeta
 }
